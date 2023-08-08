@@ -92,4 +92,4 @@ time    In seconds, since 1970
 method  HTTP method: GET, HEAD, or POST
 url Requested path
 response    HTTP response code
-bytes   Number of bytes in the reply |
+bytes   Number of bytes in the reply  |
