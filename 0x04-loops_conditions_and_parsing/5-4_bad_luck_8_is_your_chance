@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# loops from 1 to 10
+# displays:
+#	bad luck @ 4th iteration
+#	good luck @ 8th iteration
+#	Best School @ other iterations
+
+((endPoint = 10))
+((startPoint=1))
+
+while [ "$startPoint" -le "$endPoint" ]
+do
+	if [ "$startPoint" -eq 4 ]
+	then
+		echo "bad luck"
+	elif [ "$startPoint" -eq 8 ]
+	then
+		echo "good luck"
+	else
+		echo "Best School"
+	fi
+	((startPoint+=1))
+done
