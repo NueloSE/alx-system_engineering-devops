@@ -3,9 +3,9 @@
 (( endPoint=10 ))
 (( startPoint=1 ))
 
-while [ "$startPoint" -le "$endPoint" ]
+while [ $startPoint -le $endPoint ]
 do
-	if [ "$startPoint" -eq 9 ]
+	if [ $startPoint -eq 9 ]
 	then
 		echo "Hi"
 	else
