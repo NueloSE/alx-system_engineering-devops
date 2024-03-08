@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Displays numbers from 1 to 100
+
+(( startPoint=1 ))
+(( endPoint=100 ))
+
+while [ $startPoint -le $endPoint ] ; do
+	if (( startPoint % 3 == 0 )) && (( startPoint % 5 == 0 ));
+	then
+		echo "FizzBuzz"
+	elif (( startPoint % 3 == 0 ));
+	then
+		echo "Fizz"
+	elif (( startPoint % 5 == 0 ));
+	then
+		echo "Buzz"
+	else
+		echo $startPoint
+	fi
+	(( startPoint+=1 ))
+done
