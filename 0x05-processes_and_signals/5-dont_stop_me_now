@@ -2,4 +2,4 @@
 #Stops '4-to_infinity_and_beyond' process
 #Required: You must use kill
 
-kill $(pgrep -f 4-to_infinity_and_beyond)
+kill "$(pgrep -f 4-to_infinity_and_beyond)"
