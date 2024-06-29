@@ -1,7 +1,7 @@
 # This pupppet manifest kills a running process named killmenow.
 
-exec {
-    'killprocess':
+exec {'kill-killmenow':
     command => 'pkill -f killmenow',
-    path    => ['usr/bin','usr/sbin']
+    path    => ['usr/bin','usr/sbin'],
+    returns => [0, 1],
 }
