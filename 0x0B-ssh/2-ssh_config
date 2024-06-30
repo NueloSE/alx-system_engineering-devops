@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This is a configuration for my local `/etc/ssh/ssh_config` file
+# - configured to connect to server without password
+# - configured to use the private key in `~/.ssh/school`
+Host myserver
+		HostName 174.129.55.14
+		User ubuntu
+		PasswordAuthentication no
+		PubkeyAuthentication yes
+		IdentityFile ~/.ssh/school
