@@ -12,4 +12,4 @@ ip=$2
 usrname=$3
 ssh_key=$4
 
-scp -i "$ssh_key" "$path" "$usrname@$ip"
+scp -i "$ssh_key" -o StrictHostKeyChecking=no "$path" "$usrname@$ip:~/"
