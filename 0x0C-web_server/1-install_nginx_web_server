@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+#update package list and install Nginx
+
+echo "Hello, World!" | sudo tee /var/www/html/index.html
+
+#backup the default nginx site configuration
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
+
+#configure Ngnix to serve the custom HTML page
+sudo bash -c 'cat > /etc/nginx/sites-avaliable/default' << EOF
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+
+	root /var/www/html;
+	index index.html;
+
+	server_name_;
+
+	location / {
+		try_files \$uri \$uri/ =404;
+	}
+}
+EOF
+
+#Test Nginx configuration
+sudo nginx -t
+
+#Reload Nginx to apply the changes without systemctl
+sudo service nginx reload
