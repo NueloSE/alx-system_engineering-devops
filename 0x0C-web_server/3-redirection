@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #implement redirection
 
 sudo apt-get update
