@@ -1,0 +1,12 @@
+#!/bin/bash
+#implement redirection
+
+sudo apt-get update
+sudo apt-get install -y nginx
+sudo chown -R ubuntu /var/www
+echo "Hello World!" | sudo tee /var/www/html/index.html
+replacement_string="server_name _;\n\troot \/var\/www\/html;\n\tindex index.html;\n\tlocation \/redirect_me{\n\treturn 301 https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4;\n}"
+sudo sed -i '/^\s*root\s*/d' /etc/nginx/sites-enabled/default
+sudo sed -i "s/server_name _;/$replacement_string/" /etc/nginx/sites-enabled/default
+sudo service nginx restart
+sudo nginx -t
