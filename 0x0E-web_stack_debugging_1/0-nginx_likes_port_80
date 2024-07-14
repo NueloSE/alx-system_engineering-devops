@@ -8,7 +8,7 @@ sed -i 's/listen 80 default_server;/listen 80;/g' /etc/nginx/sites-available/def
 sed -i 's/listen \[::\]:80 default_server;/listen \[::\]:80;/g' /etc/nginx/sites-available/default
 sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
 
-echo "
+echo '
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,6 +33,6 @@ Commercial support is available at
 
 <p><em>Thank you for using nginx.</em></p>
 </body>
-</html>" | sudo tee /var/www/html/index.html
+</html>' | sudo tee /var/www/html/index.html
 
 service nginx restart
