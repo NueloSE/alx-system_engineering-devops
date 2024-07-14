@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# make the code in task one shorter
+# fix nginx make the code in task one shorter
 sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
-service nginx restart
 pkill -1 nginx
