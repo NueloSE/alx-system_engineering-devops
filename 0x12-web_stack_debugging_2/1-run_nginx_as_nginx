@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# A script that configures nginx to run as nginx user and
+# not the default setting as root
+
+sed -i 's/80 default_server/8080 default_server/' /etc/nginx/sites-available/default
+sed -i 's/user .*;/user nginx;/' /etc/nginx/nginx.conf
+
+chown -R nginx:nginx /var/cache/nginx /var/log/nginx /var/run /usr/share/nginx/html
+
+sudo -u nginx nginx -g 'daemon off;'
