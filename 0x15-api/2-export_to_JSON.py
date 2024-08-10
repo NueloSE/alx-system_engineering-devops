@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Implement API call to CSV"""
-import requests
 from sys import argv
 import json
+import requests
 
 
 def api_to_json():
