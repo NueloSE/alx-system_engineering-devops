@@ -2,7 +2,7 @@
 """
 call and use data from reddit
 """
-import requests
+from requests import get
 
 
 def number_of_subscribers(subreddit):
@@ -10,7 +10,8 @@ def number_of_subscribers(subreddit):
     if (subreddit is None) or not (isinstance(subreddit, str)):
         return 0
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
-    response = (requests.get(url))
+    user_agent = {'User-agent': 'Google Chrome Version 81.0.4044.129'}
+    response = get(url, headers=user_agent)
     if response.status_code == 200:
             return (response.json()['data']['subscribers'])
     else:
